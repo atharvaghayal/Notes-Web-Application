@@ -36,6 +36,8 @@ If hosted, you can access the live demo of this project at:
 [https://<your-username>.github.io/NotesApp/](https://<your-username>.github.io/NotesApp/)
 
 ## Screenshots
+![Project console](https://github.com/user-attachments/assets/c77b9b3b-9223-4947-9537-0d53f2fc759a)
+![ProjectConsole2](https://github.com/user-attachments/assets/9e4cb46d-ea55-44c0-9f19-13fd6c8647bf)
 
 ## Contributing
 
