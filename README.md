@@ -1,6 +1,6 @@
 # Notes Web Application
 
-This is a simple Notes web application created using **HTML** and **CSS**. The application allows users to manage notes effectively and supports saving files in various formats.
+This is very Basic and simple Notes web application created using **HTML** and **CSS**. The application allows users to manage notes effectively and supports saving files in various formats.
 
 ## Features
 
