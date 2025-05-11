@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AG_Notes</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="website icon" href="notes_logo1.png" type="png">
+</head>
+<body>
+    <img src="notes_logo2.png" alt="Logo" class="logo">
+    
+    <section class="card" onclick="openPaymentModal()">
+        <h2>Python Programming</h2>
+    </section>
+
+
+    <section class="card locked">
+        <h2>Frontend Development(HTML,CSS,JS)</h2>
+    <img src="lock_icon.png" alt="Locked" class="lock-icon">
+    </section>
+
+    <section class="card locked">
+        <h2>Java</h2>
+    <img src="lock_icon.png" alt="Locked" class="lock-icon">
+    </section>
+
+    <section class="card locked">
+        <h2>C</h2>
+    <img src="lock_icon.png" alt="Locked" class="lock-icon">
+    </section>
+
+    <section class="card locked">
+        <h2>Data Structures and Algorithms</h2>
+    <img src="lock_icon.png" alt="Locked" class="lock-icon">
+    </section>
+    
+    <section class="card locked">
+        <h2>R Programming</h2>
+    <img src="lock_icon.png" alt="Locked" class="lock-icon">
+    </section>
+    
+    <section class="card locked">
+        <h2>Object Oriented Programming(Python)</h2>
+    <img src="lock_icon.png" alt="Locked" class="lock-icon">
+    </section>
+
+    <!-- Hidden Modal -->
+<div id="paymentModal" class="modal">
+  <div class="modal-content">
+    <h3>Verify You're Human</h3>
+    <p>Enter the CAPTCHA code:</p>
+    <p id="captchaCode"></p>
+    <input type="text" id="captchaInput" placeholder="Enter CAPTCHA" />
+    <button onclick="verifyCaptcha()">Verify</button>
+    
+    <div id="paymentSection" style="display: none;">
+      <h4>Scan and Pay ₹49</h4>
+      <img src="qr_code.jpg" alt="QR Code" class="qr-code">
+      <p id="timer">03:00</p>
+    </div>
+  </div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>

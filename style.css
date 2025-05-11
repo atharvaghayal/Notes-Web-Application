@@ -1,0 +1,138 @@
+/* === Base Styles === */
+body {
+    margin: 0;
+    padding: 2rem;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: darkslategray;
+    color: #403636;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+/* === Logo Styling === */
+.logo {
+    position: absolute;
+    top: 20px;
+    left: 1100px;
+    width: 100px;
+    height: auto;
+    object-fit: contain;
+    z-index: 10;
+}
+
+/* === Section Grid === */
+body {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 1.5rem;
+    padding-top: 100px;
+    justify-content: center;
+    max-width: 1000px;
+    margin: auto;
+}
+
+/* === Canvas Card Style === */
+section {
+    background-color: #F2E6E0;
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 6px 12px rgba(64, 54, 54, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 150px;
+}
+
+section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 20px rgba(64, 54, 54, 0.15);
+}
+
+/* === Typography === */
+section h2 {
+    font-size: 1.4rem;
+    color: #403636;
+    text-align: center;
+    margin: 0;
+}
+
+/* === Responsive Fixes === */
+@media (max-width: 768px) {
+    body {
+        grid-template-columns: 1fr;
+        padding: 1rem;
+    }
+
+    .logo {
+        width: 50px;
+        top: 10px;
+        left: 10px;
+    }
+}
+
+/* === LOCK CARDS=== */
+/* === Card Style (already in use, so just ensure this is here) === */
+section.card {
+    position: relative;
+    background-color: #F2E6E0;
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 6px 12px rgba(64, 54, 54, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 150px;
+    flex-direction: column;
+}
+
+/* === Lock Icon Styling === */
+.lock-icon {
+    width: 120px;
+    height: 120px;
+    opacity: 0.6;
+    margin-top: 1rem;
+}
+
+/* Optional: visually gray out locked cards */
+section.locked {
+    filter: grayscale(50%);
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+/* === QR Payment === */
+/* Modal Styling */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+  background-color: #FFF9F5;
+  padding: 2rem;
+  margin: 10% auto;
+  width: 90%;
+  max-width: 400px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.qr-code {
+  width: 200px;
+  margin-top: 1rem;
+}
+
+#timer {
+  margin-top: 1rem;
+  font-weight: bold;
+  color: #403636;
+}
