@@ -1,66 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AG_Notes</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="website icon" href="notes_logo1.png" type="png">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Notes Web App</title>
+<style>
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 2rem;
+  }
+
+  .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+  }
+
+  .card {
+    position: relative;
+    padding: 20px;
+    height: 180px;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    transform-style: preserve-3d;
+    cursor: pointer;
+    overflow: hidden;
+  }
+
+  .card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(255,255,255,0.2), transparent);
+    z-index: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .card:hover {
+    transform: rotateY(12deg) rotateX(8deg) scale(1.05);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+  }
+
+  .card:hover::before {
+    opacity: 0.5;
+  }
+
+  .card h3 {
+    position: relative;
+    z-index: 1;
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .card p {
+    position: relative;
+    z-index: 1;
+    font-size: 0.9rem;
+    opacity: 0.85;
+  }
+</style>
 </head>
 <body>
-    <img src="notes_logo2.png" alt="Logo" class="logo">
-    
-    <section class="card" onclick="openPaymentModal()">
-        <h2>Python Programming</h2>
-    </section>
+  <div class="container" id="cardsContainer"></div>
 
+<script>
+  const notes = [
+    "Basic Python Notes",
+    "Python OOPS",
+    "Python DSA",
+    "Java OOPS",
+    "Java Basic",
+    "Basics of R language",
+    "Guide for MERN",
+    "All about Git/Github",
+    "Semester 7 notes"
+  ];
 
-    <section class="card locked">
-        <h2>Frontend Development(HTML,CSS,JS)</h2>
-    <img src="lock_icon.png" alt="Locked" class="lock-icon">
-    </section>
+  const container = document.getElementById('cardsContainer');
 
-    <section class="card locked">
-        <h2>Java</h2>
-    <img src="lock_icon.png" alt="Locked" class="lock-icon">
-    </section>
-
-    <section class="card locked">
-        <h2>C</h2>
-    <img src="lock_icon.png" alt="Locked" class="lock-icon">
-    </section>
-
-    <section class="card locked">
-        <h2>Data Structures and Algorithms</h2>
-    <img src="lock_icon.png" alt="Locked" class="lock-icon">
-    </section>
-    
-    <section class="card locked">
-        <h2>R Programming</h2>
-    <img src="lock_icon.png" alt="Locked" class="lock-icon">
-    </section>
-    
-    <section class="card locked">
-        <h2>Object Oriented Programming(Python)</h2>
-    <img src="lock_icon.png" alt="Locked" class="lock-icon">
-    </section>
-
-    <!-- Hidden Modal -->
-<div id="paymentModal" class="modal">
-  <div class="modal-content">
-    <h3>Verify You're Human</h3>
-    <p>Enter the CAPTCHA code:</p>
-    <p id="captchaCode"></p>
-    <input type="text" id="captchaInput" placeholder="Enter CAPTCHA" />
-    <button onclick="verifyCaptcha()">Verify</button>
-    
-    <div id="paymentSection" style="display: none;">
-      <h4>Scan and Pay ₹49</h4>
-      <img src="qr_code.jpg" alt="QR Code" class="qr-code">
-      <p id="timer">03:00</p>
-    </div>
-  </div>
-</div>
-<script src="script.js"></script>
+  notes.forEach(note => {
+    const card = document.createElement('div');
+    card.classList.add('card');
+    card.innerHTML = `
+      <h3>${note}</h3>
+      <p>Click to open ${note}.</p>
+    `;
+    container.appendChild(card);
+  });
+</script>
 </body>
 </html>
